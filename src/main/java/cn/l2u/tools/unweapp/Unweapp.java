@@ -3,16 +3,28 @@ package cn.l2u.tools.unweapp;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * 反编译微信小游戏的代码
+ * @Title Unweapp.java
+ * @Description 
+ * @Company: 周大炮工作室
+ * @author zg
+ * @date 2020年7月23日 下午9:17:11
+ * @version V1.0
+ */
 public class Unweapp {
 
     public static void main(String[] args) throws IOException {
-        if (args.length == 0) {
-            System.out.println("用法:\nunweapp 输入文件 [输出文件夹]");
-        } else {
-            File in = new File(args[0]);
-            File outDir = args.length == 2 ? outDir = new File(args[1]) : new File(in.getAbsolutePath()+"_unpacked");
-            run(in, outDir);
-        }
+    	 File in = new File("F:\\accp\\wechat-pkg\\wxapkg\\_1784720341_106.wxapkg");
+         File outDir = args.length == 2 ? outDir = new File(args[1]) : new File(in.getAbsolutePath()+"_unpacked");
+         run(in, outDir);
+//        if (args.length == 0) {
+//            System.out.println("用法:\nunweapp 输入文件 [输出文件夹]");
+//        } else {
+//            File in = new File(args[0]);
+//            File outDir = args.length == 2 ? outDir = new File(args[1]) : new File(in.getAbsolutePath()+"_unpacked");
+//            run(in, outDir);
+//        }
     }
 
     private static void run(File in, File outDir) throws IOException {
